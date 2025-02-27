@@ -14,12 +14,30 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         Product::create([
-            'title' => 'Elit reprehenderit eu nostrud et.',
-            'price' => 19.03,
-            'quantity' => 3,
+            'title' => 'Product 1',
+            'price' => 500,
+            'quantity' => 5,
             'category_id'=> 1,
             'brand_id'=>1,
-            'description'=>'Occaecat cupidatat consequat eu eiusmod sint commodo aute. Fugiat commodo amet do dolore. Ullamco ullamco nisi laboris cillum ea. Excepteur exercitation laborum culpa ex do ipsum id laboris ut ad est commodo. Commodo occaecat commodo ex laborum ea esse consequat pariatur tempor qui reprehenderit. Irure ullamco esse cupidatat voluptate in sunt do officia ullamco fugiat deserunt.'
+            'description'=>'Product 1'
+        ]);
+
+        Product::create([
+            'title' => 'Product 2',
+            'price' => 1000,
+            'quantity' => 20,
+            'category_id'=> 2,
+            'brand_id'=>2,
+            'description'=>'Product 2'
+        ]);
+
+        Product::create([
+            'title' => 'Product 3',
+            'price' => 1500,
+            'quantity' => 3,
+            'category_id'=> 3,
+            'brand_id'=>3,
+            'description'=>'Product 3'
         ]);
     }
 }

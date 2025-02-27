@@ -1,6 +1,9 @@
-- npm install flowbite
-- npm install @element-plus/icons-vue
-- composer require laravel/sanctum
-- composer require spatie/laravel-sluggable
-- npm install sweetalert2
-- npm install @inertiajs/inertia
+npm install
+npm install sweetalert2
+npm install @inertiajs/inertia
+npm install flowbite
+npm install @element-plus/icons-vue
+
+composer install
+composer require laravel/sanctum
+composer require spatie/laravel-sluggable
