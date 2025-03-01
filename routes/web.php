@@ -9,6 +9,7 @@ use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\ProductController as UserProductController;
 use App\Http\Controllers\User\ProductListController;
+use App\Http\Controllers\PointsController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -47,6 +48,13 @@ Route::prefix('cart')->controller(CartController::class)->group(function () {
 Route::prefix('products')->controller(ProductListController::class)->group(function ()  {
     Route::get('/','index')->name('products.index');
     
+});
+
+Route::prefix('loyalty')->group(function () {
+    Route::post('/earn', [PointsController::class, 'earnPoints'])->name('loyalty.earn');
+    Route::post('/redeem', [PointsController::class, 'redeemPoints'])->name('loyalty.redeem');
+    Route::get('/balance/{user_id}', [PointsController::class, 'getBalance'])->name('loyalty.balance');
+    Route::get('/transactions/{user_id}', [PointsController::class, 'getTransactions'])->name('loyalty.transactions');
 });
 
 

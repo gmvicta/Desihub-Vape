@@ -47,4 +47,9 @@ class User extends Authenticatable
     function user_address() {
         return $this->hasMany(UserAddress::class);
     }
+
+    public function loyaltyPoints()
+    {
+        return $this->hasOne(UserLoyaltyPoints::class);
+    }
 }
