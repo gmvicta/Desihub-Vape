@@ -16,6 +16,7 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\RewardController;
+use App\Http\Controllers\AboutUsController;
 use Inertia\Inertia;
 
 //user routes
@@ -62,7 +63,7 @@ Route::prefix('loyalty')->group(function () {
 
 Route::get('/rewards', [RewardController::class, 'index'])->name('user.rewards.index');
 Route::get('/my-purchases', [PurchaseController::class, 'index'])->name('purchases.index');
-
+Route::get('/about-us', [AboutUsController::class, 'index'])->name('about.us');
 
 //end
 
