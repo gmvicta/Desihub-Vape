@@ -14,6 +14,7 @@ use App\Http\Controllers\User\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\RewardController;
 use Inertia\Inertia;
 
 //user routes
@@ -57,6 +58,7 @@ Route::prefix('loyalty')->group(function () {
     Route::get('/transactions/{user_id}', [PointsController::class, 'getTransactions'])->name('loyalty.transactions');
 });
 
+Route::get('/rewards', [RewardController::class, 'index'])->name('user.rewards.index');
 
 
 //end
