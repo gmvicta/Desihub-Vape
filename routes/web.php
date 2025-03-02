@@ -9,6 +9,7 @@ use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\ProductController as UserProductController;
 use App\Http\Controllers\User\ProductListController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\PointsController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Foundation\Application;
@@ -26,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
 
     //checkout 
     Route::prefix('checkout')->controller(CheckoutController::class)->group((function()  {
@@ -59,6 +61,7 @@ Route::prefix('loyalty')->group(function () {
 });
 
 Route::get('/rewards', [RewardController::class, 'index'])->name('user.rewards.index');
+Route::get('/my-purchases', [PurchaseController::class, 'index'])->name('purchases.index');
 
 
 //end
